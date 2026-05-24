@@ -119,9 +119,3 @@ pytest --cov=vwpdfutils --cov-report=term-missing
 1. Create a 4- or 8-page test PDF with page numbers visible.
 2. Run `vwpdfutils booklet doc.pdf doc_booklet.pdf`.
 3. Print duplex (flip on long edge), fold, and confirm page order reads 1…N.
-
-## Documentation
-
-- [spec.md](./spec.md) — functional requirements
-- [plan.md](./plan.md) — implementation plan
-- [tasks_checklist.md](./tasks_checklist.md) — implementation checklist
