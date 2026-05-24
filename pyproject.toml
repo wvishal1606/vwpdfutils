@@ -1,25 +1,34 @@
 [build-system]
-requires = ["setuptools>=61", "wheel"]
+requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "vwpdfutils"
-version = "1.0.0"
+dynamic = ["version"]
 authors = [
-    { name="Vishal W", email="wvishl1606@gmail.com"},
+    {name = "Vishal W", email = "wvishl1606@gmail.com"},
 ]
 description = "CLI for common PDF operations (compress, concat, booklet, split, rotate, convert2pdf)"
 readme = "README.md"
-requires-python = ">=3.10,<4"
-license = { text = "MIT" }
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+keywords = ["pdf", "cli", "compress", "merge", "split", "rotate", "booklet"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+]
 dependencies = [
     "pypdf[full]>=5.0.0,<6",
     "typer>=0.12.0",
-]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
 ]
 
 [project.optional-dependencies]
@@ -28,11 +37,22 @@ dev = [
     "pytest-cov>=5.0.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/wvishal1606/vwpdfutils"
+Repository = "https://github.com/wvishal1606/vwpdfutils.git"
+Issues = "https://github.com/wvishal1606/vwpdfutils/issues"
+
 [project.scripts]
 vwpdfutils = "vwpdfutils.cli:app"
 
+[tool.setuptools.package-dir]
+"" = "src"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "vwpdfutils.__version__"}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
