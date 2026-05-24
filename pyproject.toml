@@ -12,7 +12,7 @@ description = "CLI for common PDF operations (compress, concat, booklet, split, 
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-license-files = ["LICEN[CS]E.*"]
+license-files = ["LICEN[CS]E*"]
 keywords = ["pdf", "cli", "compress", "merge", "split", "rotate", "booklet"]
 classifiers = [
     "Development Status :: 4 - Beta",
